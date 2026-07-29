@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import CalculusMikusiNskiOperationalCalculiLemmaCanonicalLaneLean.OperationalCalculusAdmissibleClass
+import CalculusMikusiNskiOperationalCalculiLemmaCanonicalLaneLean.BridgeLemmas
+import CalculusMikusiNskiOperationalCalculiLemmaCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace CalculusMikusiNskiOperationalCalculiLemmaCanonicalLaneLean
+
+def ConstrainedMikusinskiCalculusClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_mikusinski_calculus_endgame (A : AdmissibleClass) :
+    ConstrainedMikusinskiCalculusClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CalculusMikusiNskiOperationalCalculiLemmaCanonicalLaneLean
+end HautevilleHouse
